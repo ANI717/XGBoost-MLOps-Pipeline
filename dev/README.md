@@ -11,8 +11,3 @@ pip install -r .\requirements.txt
 ```
 mlflow ui
 ```
-
-## Select Best Model from MLFlow
-```
-mlflow artifacts download -r <run_id> -a model -d .\artifacts\
-```
