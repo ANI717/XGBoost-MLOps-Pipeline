@@ -1,1 +1,1 @@
-# xgboost-mlops-pipeline
+# XGBoost-MLOps-Pipeline
