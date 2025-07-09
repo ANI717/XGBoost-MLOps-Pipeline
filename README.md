@@ -1,35 +1,33 @@
-# XGBoost MLOps Pipeline
-An end-to-end machine learning pipeline using **XGBoost** trained on the `sklearn` Breast Cancer dataset. This project demonstrates a full production workflow:
+# 🚀 XGBoost MLOps Pipeline
 
-- Model training and evaluation
+A complete end-to-end machine learning pipeline built using **XGBoost**, demonstrating model development, packaging, API serving, and deployment to Kubernetes.
 
-- Packaging as a Python wheel
+---
 
-- Serving via a FastAPI API
+## 📌 Key Components
 
-- Containerization and deployment to a Kubernetes cluster
+- 🔬 **Model Training** with MLflow experiment tracking
+- 📦 **Model Packaging** as a Python wheel for reusability
+- ⚡ **Model Serving** via a FastAPI application
+- 🐳 **Containerization** with Docker
+- ☸️ **Deployment** to a local or cloud Kubernetes cluster
 
 ---
 
 ## 📁 Project Structure
-- [🔬 Model Development & Training](https://github.com/ANI717/XGBoost-MLOps-Pipeline/tree/main/dev) </br>
-Training and evaluating the XGBoost model using MLflow for experiment tracking.
 
-- [📦 Model Packaging](https://github.com/ANI717/XGBoost-MLOps-Pipeline/tree/main/model) </br>
-Packaging the trained model into a Python wheel for easy reuse and deployment.
-
-- [🚀 API Deployment](https://github.com/ANI717/XGBoost-MLOps-Pipeline/tree/main/api) </br>
-Serving predictions via a FastAPI app, containerized with Docker, and deployed to Kubernetes.
+- [`dev/`](./dev) – Model development and training with MLflow  
+- [`model/`](./model) – Packaging trained model into a Python wheel  
+- [`api/`](./api) – Serving predictions via FastAPI
 
 ---
 
-## ✅ Tech Stack
-- XGBoost for model training
+## 🧠 Tech Stack
 
-- MLflow for experiment tracking
-
-- FastAPI for model serving
-
-- Docker for containerization
-
-- Kubernetes for orchestration and deployment
+- `XGBoost` for model training  
+- `MLflow` for experiment tracking  
+- `FastAPI` for serving the model  
+- `Docker` for containerization  
+- `Kubernetes` for orchestration  
+- `Pytest` for testing with coverage  
+- `Logging`, `RequestID`, and validation middleware for observability
