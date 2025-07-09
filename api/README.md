@@ -37,5 +37,5 @@ pip install -r requirements.txt
 ```
 hypercorn main:app
 ```
-> `hypercorn` to support HTTP2
+> `hypercorn` to support HTTP/2
 
