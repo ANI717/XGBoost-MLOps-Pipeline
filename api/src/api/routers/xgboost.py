@@ -5,8 +5,10 @@ from api.schemas.output_schema import PredictionOutput
 from xgboost_predictor.model import XGBoostPredictor
 import numpy as np
 
+
 router = APIRouter()
 model = XGBoostPredictor()
+
 
 @router.post("/predict", response_model=PredictionOutput, tags=["xgboost"])
 async def predict_router(inputs: PredictionInput) -> PredictionOutput:
