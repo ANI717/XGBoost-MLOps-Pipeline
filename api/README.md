@@ -42,7 +42,7 @@ hypercorn main:app
 ---
 
 ## 📬 Example API Request
-**POST** `/predict`
+**POST** `/predict`</br>
 **Request Body:**
 ```
 {
