@@ -30,3 +30,12 @@ python -m pip install --upgrade pip
 # Install required dependencies
 pip install -r requirements.txt
 ```
+
+---
+
+## ▶️ Running the API Server
+```
+hypercorn main:app
+```
+> `hypercorn` to support HTTP2
+
