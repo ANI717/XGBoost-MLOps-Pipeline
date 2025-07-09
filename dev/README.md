@@ -17,6 +17,8 @@ pip install -r requirements.txt
 
 ```
 
+---
+
 ## 📊 Launch MLflow UI
 ```bash
 mlflow ui
