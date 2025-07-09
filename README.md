@@ -30,4 +30,4 @@ A complete end-to-end machine learning pipeline built using **XGBoost**, demonst
 - `Docker` for containerization  
 - `Kubernetes` for orchestration  
 - `Pytest` for testing with coverage  
-- `Logging`, `RequestID`, and validation middleware for observability
+- `Logging`, `RequestID`, and `Validation` middleware for observability
