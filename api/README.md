@@ -34,8 +34,24 @@ pip install -r requirements.txt
 ---
 
 ## ▶️ Running the API Server
-```
+```bash
 hypercorn main:app
 ```
 > `hypercorn` to support HTTP/2
 
+---
+
+## 📬 Example API Request
+**POST** `/predict`
+**Request Body:**
+```
+{
+  "features": [0.1, 1.2, 3.4, ..., 0.5]  // 30 floats
+}
+```
+**Response:**
+```json
+{
+  "prediction": 1
+}
+```
