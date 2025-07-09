@@ -1,4 +1,4 @@
-## ⚙️ Environment Setup and MLflow UI
+## ⚙️ Environment Setup
 ```bash
 # Navigate to the project directory
 cd XGBoost-MLOps-Pipeline/dev/
