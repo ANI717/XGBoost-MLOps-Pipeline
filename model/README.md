@@ -15,6 +15,7 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
+---
 
 ## 🧪 Run Tests with Coverage
 Ensure unit test coverage is 85% or higher:
@@ -23,6 +24,7 @@ pytest --cov=src
 ```
 > you can add `--cov-report=term-missing` to see which lines are not covered.
 
+---
 
 ## 📦 Build Python Wheel
 Upgrade build tools and package the project into a .whl and .tar.gz:

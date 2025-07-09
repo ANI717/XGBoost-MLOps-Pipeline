@@ -9,6 +9,8 @@ An end-to-end machine learning pipeline using **XGBoost** trained on the `sklear
 
 - Containerization and deployment to a Kubernetes cluster
 
+---
+
 ## 📁 Project Structure
 - [🔬 Model Development & Training](https://github.com/ANI717/XGBoost-MLOps-Pipeline/tree/main/dev) </br>
 Training and evaluating the XGBoost model using MLflow for experiment tracking.
@@ -18,6 +20,8 @@ Packaging the trained model into a Python wheel for easy reuse and deployment.
 
 - [🚀 API Deployment](https://github.com/ANI717/XGBoost-MLOps-Pipeline/tree/main/api) </br>
 Serving predictions via a FastAPI app, containerized with Docker, and deployed to Kubernetes.
+
+---
 
 ## ✅ Tech Stack
 - XGBoost for model training
@@ -29,4 +33,3 @@ Serving predictions via a FastAPI app, containerized with Docker, and deployed t
 - Docker for containerization
 
 - Kubernetes for orchestration and deployment
-

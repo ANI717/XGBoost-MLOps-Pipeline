@@ -1,4 +1,4 @@
-## ⚙️ Environment Setup and MLflow UI
+## ⚙️ Environment Setup
 ```bash
 # Navigate to the project directory
 cd XGBoost-MLOps-Pipeline/dev/
@@ -16,6 +16,8 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 
 ```
+
+---
 
 ## 📊 Launch MLflow UI
 ```bash
