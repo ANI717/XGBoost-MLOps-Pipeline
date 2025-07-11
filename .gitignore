@@ -209,3 +209,6 @@ __marimo__/
 # MLflow
 mlruns/
 mlruns.db
+
+# Logfiles
+*.log*

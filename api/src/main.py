@@ -4,6 +4,7 @@ from api.config import settings, logger
 from api.events import startup, shutdown
 from api.middlewares.process_time_middleware import ProcessTimeMiddleware
 from api.middlewares.request_id_middleware import RequestIDMiddleware
+from api.middlewares.request_response_logger_middleware import RequestResponseLoggerMiddleware
 from api.routers import home
 from api.routers import metadata
 from api.routers import xgboost
@@ -27,6 +28,7 @@ shutdown.include_event(app, logger)
 
 app.add_middleware(ProcessTimeMiddleware)
 app.add_middleware(RequestIDMiddleware)
+app.add_middleware(RequestResponseLoggerMiddleware, logger=logger)
 
 app.include_router(home.router)
 app.include_router(metadata.router)
