@@ -1,5 +1,5 @@
 import logging
-from api.middlewares.request_id_middleware import request_id_var
+from api.middleware.request_id_middleware import request_id_var
 from api.loggers.handlers.get_file_handler import get_file_handler
 from api.loggers.handlers.get_console_handler import get_console_handler
 

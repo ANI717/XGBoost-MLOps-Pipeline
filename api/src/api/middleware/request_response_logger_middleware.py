@@ -3,7 +3,7 @@ from starlette.types import ASGIApp, Receive, Scope, Send, Message
 from starlette.responses import JSONResponse
 
 from api.loggers.logger_factory import LoggerFactory
-from api.middlewares.request_id_middleware import request_id_var
+from api.middleware.request_id_middleware import request_id_var
 
 
 logger = LoggerFactory(name="api-logger").get_logger()

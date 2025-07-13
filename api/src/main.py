@@ -2,9 +2,9 @@ from fastapi import FastAPI
 
 from api.config import settings, logger
 from api.events import startup, shutdown
-from api.middlewares.process_time_middleware import ProcessTimeMiddleware
-from api.middlewares.request_id_middleware import RequestIDMiddleware
-from api.middlewares.request_response_logger_middleware import RequestResponseLoggerMiddleware
+from api.middleware.process_time_middleware import ProcessTimeMiddleware
+from api.middleware.request_id_middleware import RequestIDMiddleware
+from api.middleware.request_response_logger_middleware import RequestResponseLoggerMiddleware
 from api.routers import home
 from api.routers import health
 from api.routers import metadata
