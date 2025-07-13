@@ -7,15 +7,26 @@ from api.middlewares.request_id_middleware import request_id_var
 
 
 logger = LoggerFactory(name="api-logger").get_logger()
+excluded_paths = {"/docs", "/openapi.json", "/health"}
 
 
 class RequestResponseLoggerMiddleware:
-    def __init__(self, app: ASGIApp, logger=logger):
+    def __init__(self, app: ASGIApp,
+                 logger=logger,
+                 excluded_paths: set[str] = excluded_paths):
+        
         self.app = app
         self.logger = logger
+        self.excluded_paths = excluded_paths
+
 
     async def __call__(self, scope: Scope, receive: Receive, send: Send):
         if scope["type"] != "http":
+            await self.app(scope, receive, send)
+            return
+        
+        # ---- Skip excluded paths ----
+        if scope.get("path", "") in self.excluded_paths:
             await self.app(scope, receive, send)
             return
         
