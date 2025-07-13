@@ -55,3 +55,14 @@ hypercorn main:app
   "prediction": 1
 }
 ```
+
+---
+
+## 🐳 Docker Deployment
+```bash
+# Build Docker image
+docker build -t xgboost-api .
+
+# Run the container
+docker run -d -p 8080:8080 --name xgboost-container xgboost-api
+```
