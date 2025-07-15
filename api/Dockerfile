@@ -9,7 +9,7 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 
 # Install system deps (optional, needed for some libs)
-RUN apt-get update && apt-get install -y build-essential
+RUN apt-get update && apt-get install -y build-essential curl
 
 # Copy dependencies file and install Python packages
 COPY requirements.txt .

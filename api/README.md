@@ -61,8 +61,66 @@ hypercorn main:app
 ## 🐳 Docker Deployment
 ```bash
 # Build Docker image
-docker build -t xgboost-api .
+docker build --no-cache -t xgboost-api-image:local .
 
 # Run the container
-docker run -d -p 8080:8080 --name xgboost-container xgboost-api
+docker run -d -p 8080:8080 --name xgboost-api-container xgboost-api-image
 ```
+
+---
+
+## 🚀 Kubernetes Deployment
+This section outlines how to deploy the XGBoost Model Serving API to a local Kubernetes cluster using `Docker`, `Ingress-NGINX`, and `kubectl`.
+
+### ✅ Prerequisites
+- Docker Desktop with Kubernetes enabled
+- kubectl installed and configured
+- Docker daemon running
+- Internet access to install Ingress controller
+
+### 📥 1. Install Ingress NGINX Controller
+```bash
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.0.1/deploy/static/provider/cloud/deploy.yaml
+```
+> Installs NGINX Ingress controller which is required for routing HTTP traffic to the API.
+
+### 🛠 2. Build Docker Image
+```bash
+docker build --no-cache -t xgboost-api-image:local .
+```
+> Builds a local Docker image named `xgboost-api-image:local`. Needs to make sure this matches the `image:` in `deployment.yaml`.
+
+### 📦 3. Deploy Resources Using Kustomize
+```bash
+kubectl apply -k ./k8s
+```
+> Applies all manifests (Deployment, Service, Ingress) under the `./k8s` folder using Kustomize.
+
+### 🔍 4. Inspect Cluster Resources
+```bash
+kubectl get pods
+kubectl get deployments
+kubectl get svc
+```
+> Verifies that all components are running and available.
+
+### 🪵 5. Debugging & Troubleshooting
+```bash
+# View Logs
+kubectl logs <pod-name>
+
+# Access Pod Shell
+kubectl exec -it <pod-name> -- sh
+```
+
+### 🌐 6. Access the API
+```arduino
+http://localhost/xgboost-api/docs
+```
+> The Swagger UI of from FastAPI app should show up here
+
+### 🧹 7. Clean Up Resources
+```bash
+kubectl delete -k ./k8s
+```
+> Safely removes deployment, service, and ingress related to this app.

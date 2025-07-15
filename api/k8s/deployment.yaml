@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xgboost-api-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: xgboost-api
+  template:
+    metadata:
+      labels:
+        app: xgboost-api
+    spec:
+      containers:
+        - name: xgboost-api-container
+          image: xgboost-api-image:local
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          env:
+            - name: ROOT_PATH
+              value: "/xgboost-api"
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "512Mi"
+            limits:
+              cpu: "500m"
+              memory: "1Gi"

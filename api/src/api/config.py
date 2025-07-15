@@ -11,7 +11,7 @@ load_dotenv(find_dotenv("../.env"))
 
 class Settings(BaseSettings):
     ENV: str = "dev"
-    ROOT_PATH: Union[str, None] = None
+    ROOT_PATH: str = ""
     LOG_LEVEL: str = "INFO"
     EXCLUDED_PATHS: set[str] = {"/docs", "/openapi.json", "/health"}
 
