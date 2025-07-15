@@ -78,13 +78,16 @@ This section outlines how to deploy the XGBoost Model Serving API to a local Kub
 - Docker daemon running
 - Internet access to install Ingress controller
 
-### 📥 1. Create Namespace and Install Ingress NGINX Controller
+### 📥 1. Setup Kubernetes
 ```bash
 # Create Namespace
 kubectl create namespace mlops
 
 # Install Ingress NGINX Controller
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.0.1/deploy/static/provider/cloud/deploy.yaml
+
+# Install Metrics Server
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 ```
 > Installs NGINX Ingress controller which is required for routing HTTP traffic to the API.
 
@@ -105,6 +108,7 @@ kubectl apply -k ./k8s
 kubectl get pods -n mlops
 kubectl get deployments -n mlops
 kubectl get svc -n mlops
+kubectl get hpa -n mlops
 ```
 > Verifies that all components are running and available.
 

@@ -4,6 +4,7 @@ kind: Kustomization
 namespace: mlops
 
 resources:
-  - deployment.yaml
-  - service.yaml
-  - ingress.yaml
+  - deployment.yml
+  - service.yml
+  - ingress.yml
+  - hpa.yml
