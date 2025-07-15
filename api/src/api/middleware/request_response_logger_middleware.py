@@ -7,7 +7,7 @@ from api.middleware.request_id_middleware import request_id_var
 
 
 logger = LoggerFactory(name="api-logger").get_logger()
-excluded_paths = {"/docs", "/openapi.json", "/health"}
+excluded_paths = {"/", "/docs", "/openapi.json", "/health"}
 
 
 class RequestResponseLoggerMiddleware:
@@ -76,26 +76,13 @@ class RequestResponseLoggerMiddleware:
                 except Exception:
                     response_json = "unparsable"
 
-                try:
-                    # Log the request and response
-                    payload = {
-                        "request_id": request_id_var.get(),
-                        "request": request_json,
-                        "response": response_json,
+                payload = {
+                    "request_id": request_id_var.get(),
+                    "request": request_json,
+                    "response": response_json,
                     }
 
-                    logger.info(payload)
-
-                except Exception as e:
-                    message = f"Failed to log request/response: {str(e)}"
-                    logger.error(message)
-                    error_response = JSONResponse(
-                        status_code=500,
-                        content={
-                            "detail": message,
-                        }
-                    )
-                    await error_response(scope, receive, send)
+                logger.info(payload)
 
             await send(message)
 

@@ -13,7 +13,7 @@ class Settings(BaseSettings):
     ENV: str = "dev"
     ROOT_PATH: str = ""
     LOG_LEVEL: str = "INFO"
-    EXCLUDED_PATHS: set[str] = {"/docs", "/openapi.json", "/health"}
+    EXCLUDED_PATHS: set[str] = {"/", "/docs", "/openapi.json", "/health"}
 
 
 settings = Settings()
